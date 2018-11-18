@@ -1,0 +1,430 @@
+#AddType application/x-httpd-php .htm .html
+<filesMatch ".(js|css)$">
+ Header set Cache-Control "max-age=86400, public"
+</filesMatch>
+
+<filesMatch ".(ico|pdf|jpg|jpeg|png|gif|webp)$">
+ Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
+
+Options +FollowSymLinks
+
+#APP DOESNT SUPPORT HTTPS YET
+#RewriteEngine On
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+
+  # Remove browser bugs (only needed for really old browsers)
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary User-Agent
+</IfModule>
+
+Redirect 301 /the-real-bitcoin-club-codex.pdf /satoshiskodex
+
+Redirect 301 /presentation /presentation-the-real-bitcoin-club-bch-bitcoin-cash-2018-03-03-20-00.pdf
+Redirect 301 /presentation.pdf /presentation-the-real-bitcoin-club-bch-bitcoin-cash-2018-03-03-20-00.pdf
+
+Redirect 301 /silent-bitcoin-diso-btc-bch-barcelona-2018-03-03-18-30.html /silent-bitcoin-diso-btc-bch-barcelona-2018-03-31-20-00.html
+Redirect 301 /bitcoin-cash-bch-poker-barcelona-2018-03-03-20-00.html /bitcoin-cash-bch-poker-barcelona-2018-03-17-20-00.html
+
+Redirect 301 /shop http://therealbitcoin.club/bitcoin-bch-merchandise-shop.html
+Redirect 301 /shop.html http://therealbitcoin.club/bitcoin-bch-merchandise-shop.html
+
+Redirect 301 /contact http://therealbitcoin.club/the-real-bitcoin-club-contact.html
+Redirect 301 /contact.html http://therealbitcoin.club/the-real-bitcoin-club-contact.html
+
+Redirect 301 /team http://therealbitcoin.club/bch-bitcoin-cash-teams.html
+Redirect 301 /team.html http://therealbitcoin.club/bch-bitcoin-cash-teams.html
+Redirect 301 /teams http://therealbitcoin.club/bch-bitcoin-cash-teams.html
+Redirect 301 /teams.html http://therealbitcoin.club/bch-bitcoin-cash-teams.html
+
+Redirect 301 /videos http://therealbitcoin.club/bitcoin-cash-gallery-video.html
+Redirect 301 /videos.html http://therealbitcoin.club/bitcoin-cash-gallery-video.html
+Redirect 301 /gallery http://therealbitcoin.club/bitcoin-cash-gallery-video.html
+Redirect 301 /gallery.html http://therealbitcoin.club/bitcoin-cash-gallery-video.html
+Redirect 301 /gallery-video http://therealbitcoin.club/bitcoin-cash-gallery-video.html
+Redirect 301 /gallery-video.html http://therealbitcoin.club/bitcoin-cash-gallery-video.html
+
+Redirect 301 /faq http://therealbitcoin.club/bch-bitcoin-crypto-faq.html
+Redirect 301 /faq.html http://therealbitcoin.club/bch-bitcoin-crypto-faq.html
+
+Redirect 301 /event http://therealbitcoin.club/crypto-bitcoin-bch-events.html
+Redirect 301 /event.html http://therealbitcoin.club/crypto-bitcoin-bch-events.html
+Redirect 301 /events http://therealbitcoin.club/crypto-bitcoin-bch-events.html
+Redirect 301 /events.html http://therealbitcoin.club/crypto-bitcoin-bch-events.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.therealbitcoin\.club$ [NC]
+
+RewriteRule ^(.*)$ http://therealbitcoin.club/$1 [L,R=301]
+
+#TRBC
+Redirect 301 /ChIJEUo5JceipBIRlw3IsieB6Sg http://loc.trbc.io
+Redirect 301 /trbc http://loc.trbc.io
+#La Besneta
+Redirect 301 /ChIJqQmtTryipBIRe3u-XKQxkmw https://www.google.com/maps?cid=7823370084696357755
+#Molsa LEstel
+Redirect 301 /ChIJGZOYjLiipBIRQV03-yVCmew https://www.google.com/maps?cid=17048730595283656001
+#Cara B
+Redirect 301 /ChIJY_ZMtr6ipBIRVC0WRH76Txc https://www.google.com/maps?cid=1679836606247611732
+#Sincronia Yoga
+Redirect 301 /ChIJh2A7VL2ipBIRIxR3Ylnot50 https://www.google.com/maps?cid=11364807655294440483
+#MIT K
+Redirect 301 /ChIJYWoT6byipBIR-6HaCztMc5A https://www.google.com/maps?cid=10408746980269007355
+#Parallelo
+Redirect 301 /ChIJ65RZOZeipBIRT__huVdAODc https://www.google.com/maps?cid=3979001016306761551
+#FreeSweet
+Redirect 301 /freeAndSweet https://www.google.com/maps/place/Free+%26+Sweet/@41.4151266,2.1764896,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2d15b40b38f:0x97260be88cc7062!8m2!3d41.4151266!4d2.1785654
+#LaTrocadero
+Redirect 301 /ChIJFyeCRMOipBIR5-Pzg0mWoRs https://www.google.com/maps?cid=1991037752765047783
+#DolcePizza
+Redirect 301 /ChIJBQJolLiipBIR7CSEnGFSk04 https://www.google.com/maps?cid=5661959735726056684
+#piano
+Redirect 301 /pianoPiano https://www.google.com/maps/place/Piano+Piano+Organic+Piadina/@41.4004013,2.1555909,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a296303216b3:0x87a4f8cf6c122d3a!8m2!3d41.4003973!4d2.1577796
+#ikas
+Redirect 301 /ChIJMdhwU7yipBIRmw8iDQwoVqM https://www.google.com/maps?cid=11769638708404424603
+#Quinoa
+Redirect 301 /ChIJq6o3d76ipBIRa1EoLPe9uMk https://www.google.com/maps?cid=14535576666633687403
+#SuperSol
+Redirect 301 /superSol https://www.google.com/maps/place/Parking+Saba+Bamsa+-+Pla%C3%A7a+del+Sol+-+Barcelona/@41.4014927,2.1559351,19z/data=!4m13!1m7!3m6!1s0x12a4a2bd7ac995ad:0xfe250b506085e108!2sPla%C3%A7a+del+Sol,+08012+Barcelona!3b1!8m2!3d41.4014917!4d2.1564823!3m4!1s0x12a4a2bd7990bd3d:0xb8ccb0dcaba5b650!8m2!3d41.4013399!4d2.1566845
+#gelatology
+Redirect 301 /ChIJayYeJpaipBIR8ZbTZO4x7dM https://www.google.com/maps?cid=15270916811446785777
+#crudi
+Redirect 301 /ChIJi8Cu37yipBIRF2TNjRvcXiQ https://www.google.com/maps?cid=2620774044077483031
+#hotel1
+Redirect 301 /hotel1 https://www.google.com/maps/place/Carrer+de+Sant+Pau,+38,+08001+Barcelona/@41.3795316,2.1702646,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2586763842f:0x610839a462310e0f!8m2!3d41.3795276!4d2.1724533
+#hotel2
+Redirect 301 /hotel2 https://www.google.com/maps/place/Carrer+de+S%C3%B2ria,+14,+08003+Barcelona/@41.3799576,2.1895811,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a3a82cdc722b:0xfa830f1eb870f347!8m2!3d41.3799536!4d2.1917698
+#hotel3
+Redirect 301 /hotel3 https://www.google.com/maps/place/Carrer+del+Comer%C3%A7,+26,+08003+Barcelona/@41.3883246,2.1791639,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2fcf9bb9dbb:0x560d6a6af168ec52!8m2!3d41.3883206!4d2.1813526
+#hotel4
+Redirect 301 /hotel4 https://www.google.com/maps/place/Carrer+de+Joaqu%C3%ADn+Costa,+29,+08001+Barcelona/@41.3821918,2.1639253,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2f514b804f5:0xf844047276d82b50!8m2!3d41.3821878!4d2.166114
+#sweetbcn1
+Redirect 301 /sweetbcn1 https://www.google.com/maps/place/Carrer+de+Ballester,+21,+08023+Barcelona/@41.4062714,2.1427975,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2a0aab7ea95:0xd2db08ee2f719720!8m2!3d41.4062714!4d2.1449862
+#sweetbcn2
+Redirect 301 /sweetbcn2 https://www.google.com/maps/place/Carrer+de+Sant+Pere+M%C3%A0rtir,+15,+08012+Barcelona/@41.3992051,2.1553582,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2964df51961:0xda03b0180fec62b7!8m2!3d41.3992051!4d2.1575469
+#sweetbcn3
+Redirect 301 /sweetbcn3 https://www.google.com/maps/place/Carrer+de+Ferrer+de+Blanes,+6,+08012+Barcelona/@41.3985755,2.1569951,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a296629615bf:0x99deca8dd6401275!8m2!3d41.3985755!4d2.1591838
+#sweetbcn4
+Redirect 301 /sweetbcn4 https://www.google.com/maps/place/Sweet+BCN+Traveller+House/@41.398815,2.1655043,17z/data=!3m1!4b1!4m7!3m6!1s0x0:0x5263f5a93e031382!5m1!1s2018-04-12!8m2!3d!4d
+#sweetbcn5
+Redirect 301 /sweetbcn5 https://www.google.com/maps/place/Sweet+BCN+Youth+Hostel/@41.3968436,2.1638158,17z/data=!3m1!4b1!4m7!3m6!1s0x0:0x2ebc38d56eea0aa3!5m1!1s2018-04-10!8m2!3d41.3968436!4d2.1660045
+#vacka
+Redirect 301 /ChIJ8d9-IpeipBIRK7ou3Vv7VrQ https://www.google.com/maps?cid=12994850146795567659
+#madameDesertGracia
+Redirect 301 /madameDessertGracia https://www.google.de/maps/place/Madame+Desserts+(Bakery+%26+Desserts+Gluten+Free)/@41.3989998,2.1082886,12z/data=!4m8!1m2!2m1!1sMadame+Dessert!3m4!1s0x12a4a2bdf12cd331:0xc8f7c9d079b524e6!8m2!3d41.4013568!4d2.1589647
+#uay balam
+Redirect 301 /ChIJXTXMJr2ipBIRTWdAb-q-L_M https://www.google.com/maps?cid=17523434589220005709
+#bar laila
+Redirect 301 /ChIJVxhC87uipBIR4GTcQ-tbzpI https://www.google.com/maps?cid=10578493640753833184
+#curuba.scp
+Redirect 301 /ChIJhWT0NJaipBIR0rKbWsDmC-k https://www.google.com/maps?cid=16792769349409288914
+#King Kaya Grow
+Redirect 301 /ChIJkcsO_L2ipBIRzzk1Q5JNaxU https://www.google.com/maps?cid=1543412587892652495
+#traviesos
+Redirect 301 /traviesos https://www.google.de/maps/place/TRAVIESOS-healthy+fast-food+%26+gift+shop/@41.3998381,2.1519149,17z/data=!4m5!3m4!1s0x12a4a30f7fc4f46d:0x29cb411f45d20605!8m2!3d41.3998381!4d2.1541036
+#eco-logic
+Redirect 301 /ChIJWUDoFJiipBIR4Spi8Jgg6AU https://www.google.com/maps?cid=425626006026595041
+#vegala
+Redirect 301 /ChIJ5ynTF5iipBIRSOx9O00QlvI https://www.google.com/maps?cid=17480176927581793352
+#amapola vegan shop
+Redirect 301 /ChIJqe3x6ZeipBIRxq6nqe0n_I4 https://www.google.com/maps?cid=10303153949223923398
+#thedogishot
+Redirect 301 /ChIJsb6AJfWipBIR8tP5LPSDjKM https://www.google.com/maps?cid=11784939409671574514
+#sputnink
+Redirect 301 /sputnink https://www.google.de/maps/place/Sputnink+Tattoo+Barcelona/@41.4036452,2.1570201,19z/data=!4m5!3m4!1s0x12a4a2bc54947b2b:0xf90cb547ea19716e!8m2!3d41.4036452!4d2.1575673
+Redirect 301 /redvan https://www.google.de/maps/place/Red+Van+Tattoo/@41.4065511,2.158178,21z/data=!4m5!3m4!1s0x12a4a2bb8db69e2f:0x1a65940784bebf33!8m2!3d41.4065511!4d2.1583148
+Redirect 301 /naturoteca https://www.google.de/maps/place/Naturoteca/@41.4064787,2.1576772,19z/data=!4m13!1m7!3m6!1s0x12a4a2bbbf366a0d:0x171d64a85de4b9b0!2sPla%C3%A7a+de+Rovira+i+Trias,+08024+Barcelona!3b1!8m2!3d41.4075912!4d2.1584229!3m4!1s0x12a4a2bbbc11fabb:0x686c6b7502d16426!8m2!3d41.407648!4d2.1579733
+Redirect 301 /underskin https://www.google.de/maps/place/Underskin+TATTOO/@41.4050393,2.1588886,17z/data=!4m5!3m4!1s0x12a4a2b89623ce9b:0x56b422766d3f3ef1!8m2!3d41.4042587!4d2.1637702
+Redirect 301 /goldstreet https://www.google.de/maps/place/Gold+Street+Tattoo/@41.4046182,2.1551194,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bc5f6e4bf7:0x56a1366a3a193044!8m2!3d41.4046182!4d2.1573081
+Redirect 301 /malverde https://www.google.de/maps/place/Malverde/@41.4038388,2.1582419,21z/data=!4m12!1m6!3m5!1s0x0:0x6c9231a45cbe7b7b!2sLa+Besneta!8m2!3d41.4038875!4d2.1582583!3m4!1s0x12a4a2bc4e9406db:0x2fd9c3bb21018e46!8m2!3d41.4039357!4d2.1581288
+Redirect 301 /virreina https://www.google.de/maps/place/Bar+Virreina/@41.4045963,2.1574098,20z/data=!4m5!3m4!1s0x12a4a2bc60c6784b:0x3a755488a73fb08!8m2!3d41.4049542!4d2.1576152
+Redirect 301 /magiaroja https://www.google.de/maps/place/M%C3%A0gia+Roja+HQ/@41.4023853,2.1625784,16z/data=!4m5!3m4!1s0x0:0x17ade5461cbb31da!8m2!3d41.4066034!4d2.1563284
+Redirect 301 /louis https://www.google.de/maps/place/Luis+Tattoo/@41.4026216,2.1580079,19z/data=!4m8!1m2!2m1!1stattoo+shops!3m4!1s0x0:0x8edd9db03accb38d!8m2!3d41.4024379!4d2.158666
+Redirect 301 /vegworldindia https://www.google.de/maps/place/Restaurant+Veg+World+India/@41.4046014,2.1585332,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2be967842bb:0xbe313c65013cf07a!8m2!3d41.4045974!4d2.1607219
+#parlour
+Redirect 301 /parlour https://www.google.com/maps?cid=10389090500842529841
+#lapizza
+Redirect 301 /ChIJ89o4J5aipBIRfDm0sBYWJZQ https://www.google.com/maps?cid=10674962778461321596
+#invisible
+Redirect 301 /invisible https://www.google.com/maps?cid=10804077697599821412
+#seedsofafrica
+Redirect 301 /seedsofafrica https://www.google.de/maps/place/Seeds+of+Africa/@41.4038364,2.1556971,17z/data=!4m5!3m4!1s0x12a4a2bc520fb18d:0x8bcdbe791a1ce9d0!8m2!3d41.4038324!4d2.1578858
+#naturoteca
+Redirect 301 /ChIJu_oRvLuipBIRJmTRAnVrbGg https://www.google.com/maps?cid=7524507227731878950
+Redirect 301 /atabalats https://www.google.com/maps?cid=7700511276469196244
+
+Redirect 301 /vinegre https://www.google.de/maps/place/Vi+Negre/@41.403348,2.1543823,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bd1cf64177:0x2e87ec34572983bb!8m2!3d41.403344!4d2.156571
+Redirect 301 /greenlifestyle https://www.google.de/maps/place/GreenLifeStyle+EcoFashion+-+Tienda+de+Ropa+Ecol%C3%B3gica/@41.4018775,2.1551054,17z/data=!4m5!3m4!1s0x12a4a2bd9d8b1ce9:0xc7bdd2a87195be28!8m2!3d41.4018735!4d2.1572941
+Redirect 301 /entrehores https://www.google.de/maps/place/Entre+Hores/@41.4031225,2.1556327,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bdae4bffff:0x73ab0165d35c49fe!8m2!3d41.4031185!4d2.1578214
+Redirect 301 /marcelino https://www.google.de/maps/place/Marcelino+1968/@41.4013007,2.15475,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bd7b7c80a7:0xad06e2edcf40e347!8m2!3d41.4012967!4d2.1569387
+Redirect 301 /mexcla https://www.google.de/maps/place/MEXCLA/@41.402853,2.1567153,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bdc5ea5e09:0xa2f160da3db5068d!8m2!3d41.402849!4d2.158904
+Redirect 301 /vietnamita https://www.google.de/maps/place/La+Vietnamita+Gr%C3%A0cia/@41.400814,2.1569413,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2961b661371:0x99e6c38d765d3bbe!8m2!3d41.40081!4d2.15913
+Redirect 301 /sunsais https://www.google.de/maps/place/Sunsais/@41.402607,2.1564803,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bdc0d46465:0x38306bb1088b6c27!8m2!3d41.402603!4d2.158669
+Redirect 301 /lapiadina https://www.google.de/maps/place/La+Piadina/@41.4050705,2.1545933,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bc8c48d211:0x891e7e3d91170a8!8m2!3d41.4050665!4d2.156782
+Redirect 301 /cantinamachito https://www.google.de/maps/place/Cantina+Machito/@41.4043208,2.1556391,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bc45497527:0x381bc94af3ef82ee!8m2!3d41.4043168!4d2.1578278
+Redirect 301 /placaroviraitrias https://www.google.de/maps/place/Pla%C3%A7a+de+Rovira+i+Trias,+08024+Barcelona/@41.4075952,2.1562342,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bbbf366a0d:0x171d64a85de4b9b0!8m2!3d41.4075912!4d2.1584229
+Redirect 301 /plazajoanic https://www.google.de/maps/place/Pla%C3%A7a+d'En+Joanic,+08024+Barcelona/@41.4107542,2.1745089,15z/data=!4m5!3m4!1s0x12a4a2bf27b8868d:0xb0d34aac0c483e50!8m2!3d41.4052815!4d2.1623204
+Redirect 301 /plazavirreina https://www.google.de/maps/place/Virreina+Square/@41.4107542,2.1745089,15z/data=!4m5!3m4!1s0x12a4a2bc8aa01871:0x8f6e5a7b59ff6f5d!8m2!3d41.4049813!4d2.1572397
+Redirect 301 /plazadelnord https://www.google.de/maps/place/Pla%C3%A7a+del+Nord/@41.407001,2.1555187,20z/data=!4m13!1m7!3m6!1s0x12a4a2bb45f26945:0x9f20db1642e062f1!2sPla%C3%A7a+del+Nord,+08024+Barcelona!3b1!8m2!3d41.4069854!4d2.1550941!3m4!1s0x12a4a2bb4f11733f:0x3083ba08e0352921!8m2!3d41.4069499!4d2.1553608
+Redirect 301 /plazaviladegracia https://www.google.de/maps/place/Vila+de+Gr%C3%A0cia+Square/@41.4046345,2.1578378,17z/data=!4m13!1m7!3m6!1s0x12a4a2be44f03883:0x2d4ac23d48784d4!2sPla%C3%A7a+de+John+Lenon,+08012+Barcelona!3b1!8m2!3d41.4027545!4d2.1613917!3m4!1s0x0:0x4a677b973c5f1c3d!8m2!3d41.4002261!4d2.1576551
+Redirect 301 /plazadelarevolucio https://www.google.de/maps/place/Revolution+Square/@41.4027758,2.1581011,21z/data=!4m13!1m7!3m6!1s0x12a4a2bdbb92a299:0xe0ee7e78b05b873d!2sPla%C3%A7a+Revoluci%C3%B3+de+Setembre+1868,+08012+Barcelona!3b1!8m2!3d41.4026922!4d2.1581476!3m4!1s0x12a4a2bdbae1b8a7:0xf62031b086e51335!8m2!3d41.4026844!4d2.1581644
+Redirect 301 /plazadelsol https://www.google.de/maps/place/Plaza+Del+Sol/@41.4015722,2.1564548,21z/data=!4m13!1m7!3m6!1s0x12a4a2bd7ac995ad:0xfe250b506085e108!2sPla%C3%A7a+del+Sol,+08012+Barcelona!3b1!8m2!3d41.4016338!4d2.1567276!3m4!1s0x0:0x56f5edad6e9e0e0a!8m2!3d41.40166!4d2.15669
+Redirect 301 /greenlifestyle https://www.google.com/maps?cid=14392891605047950888
+Redirect 301 /elbandarra https://www.google.com/maps?cid=11025988013293539396
+Redirect 301 /amelia https://www.google.com/maps?cid=11396867855257245261
+Redirect 301 /molsa2 https://www.google.com/maps?cid=1059479608087384936
+Redirect 301 /recup https://www.google.com/maps?cid=13536894265438356317
+Redirect 301 /pasticceria https://www.google.com/maps?cid=3600575213277969762
+Redirect 301 /rentabike https://www.google.com/maps?cid=7468755854867061309
+Redirect 301 /bicioci https://www.google.com/maps?cid=15634612277211230173
+Redirect 301 /luminalbar https://www.google.com/maps/place/Luminal+Bar/@41.3987537,2.1530643,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a297824c104f:0x3dfec66ef20ab2ad!8m2!3d41.3987497!4d2.155253
+Redirect 301 /embedluminal https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.8642801082597!2d2.1530643156816778!3d41.398753703252936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a297824c104f%3A0x3dfec66ef20ab2ad!2sLuminal+Bar!5e0!3m2!1sen!2suk!4v1529597340663
+Redirect 301 /embedtrbc https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.5029789613563!2d2.1643613156818686!3d41.406599002766455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2c72548ba8b%3A0xf125ecca49d4d9c5!2sThe+Real+Bitcoin+Club!5e0!3m2!1sen!2suk!4v1529597436016
+Redirect 301 /silentbitcoindisco https://www.youtube.com/watch?v=n4Up06QqYuY
+Redirect 301 /freebitcoincash https://www.youtube.com/watch?v=d_fBwIk9iTw
+Redirect 301 /moveyourbchteaser https://www.youtube.com/watch?v=WjRMLGjC8_k
+Redirect 301 /satoshiskodex /satoshiskodex.pdf
+Redirect 301 /home.html /index.html
+Redirect 301 /candelacanela https://www.google.com/maps?cid=12525164705349449688
+Redirect 301 /lalima https://www.google.com/maps?cid=1512221840633520549
+Redirect 301 /elosopanda https://www.google.com/maps?cid=9808515041980243607
+Redirect 301 /milmiralls https://www.google.com/maps?cid=8136413582362648275
+Redirect 301 /lejournal https://www.google.com/maps?cid=11281809046183660266
+Redirect 301 /stgermain https://www.google.com/maps?cid=5319149264702821361
+Redirect 301 /chatelet https://www.google.com/maps?cid=15441435945004603884
+Redirect 301 /luminal https://www.google.com/maps?cid=4467226060207600301
+Redirect 301 /kamoma https://www.google.com/maps?cid=6754095698124370231
+Redirect 301 /bonvivant https://www.google.com/maps?cid=3095693881261169738
+Redirect 301 /nosweat https://www.google.com/maps?cid=9790440481666432314
+Redirect 301 /lavermu https://www.google.com/maps?cid=7237065470405807610
+Redirect 301 /elcolleccionista https://www.google.com/maps?cid=2880200345161281449
+Redirect 301 /akash https://www.google.com/maps/place/Perruqueria+Akash/@41.4083572,2.1575411,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bbd584fe43:0xc5c81aeab7f99cd7!8m2!3d41.4083532!4d2.1597298
+Redirect 301 /serveigracia https://www.google.com/maps/place/Servei+Gr%C3%A0cia/@41.4080196,2.1571279,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4a2bbd0fc0c0b:0x9fdc9c94370ea5e4!8m2!3d41.4080156!4d2.1593166
+
+####JAPAN#####
+Redirect 301 /numazukoginza https://www.google.com/maps?cid=9371196979807333971
+Redirect 301 /daikanyama https://www.google.com/maps?cid=16514403633362766893
+Redirect 301 /cafedeperle https://www.google.com/maps?cid=14504973495770998243
+Redirect 301 /twodogstaproom https://www.google.com/maps?cid=1228766404026541185
+Redirect 301 /thepinkcow https://www.google.com/maps?cid=17578025552262148512
+Redirect 301 /fline https://www.google.com/maps?cid=309038365810854347
+Redirect 301 /kagurazaka https://www.google.com/maps?cid=4232413780756761769
+Redirect 301 /thepinkcowakasaka https://www.google.com/maps?cid=9602925579879419933
+Redirect 301 /goodheavens https://www.google.com/maps?cid=7214754626781536167
+Redirect 301 /belgianbeer https://www.google.com/maps/place/35%C2%B040'19.8%22N+139%C2%B044'19.2%22E/@35.6721561,139.7364693,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d35.6721518!4d139.738658
+Redirect 301 /kandakirari https://www.google.com/maps?cid=9419762198935220642
+Redirect 301 /greecefood https://www.google.com/maps?cid=4671984594153570055
+Redirect 301 /bargolden https://www.google.com/maps?cid=10861420210595603866
+Redirect 301 /glutenfree https://www.google.com/maps/place/Gluten+Free61+cafe+%26+bar/@35.6646037,139.7194584,14z/data=!3m1!4b1!4m5!3m4!1s0x60188b9ca863ed3b:0x715d215ba3097458!8m2!3d35.664605!4d139.736968
+Redirect 301 /nembar https://www.google.com/maps?cid=6421922879068449220
+Redirect 301 /rakantokyo https://www.google.com/maps?cid=15441083314576237336
+Redirect 301 /kawashou https://www.google.com/maps?cid=10940447363827812555
+Redirect 301 /soulfoodhouse https://www.google.com/maps?cid=3196771275557713296
+Redirect 301 /lacocincadegaston https://www.google.com/maps?cid=7505111607858424594
+Redirect 301 /riceplus https://www.google.com/maps?cid=8987017901767266621
+Redirect 301 /yakinikutamura https://www.google.com/maps?cid=4453398537816949288
+Redirect 301 /shochumeigetsu http://meigetsu.co.jp
+Redirect 301 /osarucoffee https://www.google.com/maps?cid=2132044515226246382
+Redirect 301 /unityface https://www.google.com/maps/place/%E5%96%AB%E8%8C%B6%E3%83%BB%E8%BB%BD%E9%A3%9F+%E3%83%A6%E3%83%8B%E3%83%86%E3%82%A3%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9/@34.5321473,135.4949854,19z/data=!4m5!3m4!1s0x6000da50496f0001:0x3c8e0d9ad02023fd!8m2!3d34.5321509!4d135.4955319
+Redirect 301 /engaro https://www.google.com/maps/place/%E5%A4%A7%E9%98%AA+%E6%A2%85%E7%94%B0+%E7%A6%8F%E5%B3%B6%E5%8C%BA+%EF%BD%9CORGANIC+SALON+ENGARO%E3%80%90+%E7%BE%8E%E5%AE%B9%E9%99%A2+%E7%BE%8E%E5%AE%B9%E5%AE%A4+%2F+%E3%82%AB%E3%83%A9%E3%83%BC+%E7%99%BD%E9%AB%AA%E6%9F%93%E3%82%81+%2F+%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF+%E3%83%B4%E3%82%A3%E3%83%A9%E3%83%AD%E3%83%89%E3%83%A9+%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%E3%82%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A4+%E3%80%91/@34.7022734,135.4854073,17z/data=!3m1!4b1!4m5!3m4!1s0x6000e689d5a6e27f:0xc33fb5210a0bd870!8m2!3d34.702269!4d135.487596
+Redirect 301 /cafebarcoins https://www.google.com/maps/place/%E4%BB%AE%E6%83%B3%E9%80%9A%E8%B2%A8%E3%82%AB%E3%83%95%E3%82%A7%EF%BC%86%E3%83%90%E3%83%BC%EF%BC%A3%EF%BC%AF%EF%BC%A9%EF%BC%AE%EF%BC%B3/@34.6595978,135.5037942,17z/data=!3m1!4b1!4m5!3m4!1s0x6000e700bfa89a47:0x2948db9ce0bb02db!8m2!3d34.6595934!4d135.5059829
+Redirect 301 /04village https://www.google.com/maps/place/%EF%BC%90%EF%BC%94+%EF%BD%96%EF%BD%89%EF%BD%8C%EF%BD%8C%EF%BD%81%EF%BD%87%EF%BD%85+%E3%81%AA%E3%82%93%E3%81%B0/@34.6550271,135.506302,17z/data=!3m1!4b1!4m7!3m6!1s0x6000e75e5ec93997:0x3fd427d5f163a86f!5m1!1s2018-09-05!8m2!3d34.6550227!4d135.5084907
+Redirect 301 /scrub https://www.google.com/maps/place/%2Fscrub/@34.7026175,135.487333,17z/data=!4m16!1m8!3m7!1s0x6000e6882bad2a2b:0x55c4b0321b6d2c2c!2s%2Fscrub!5m1!1s2018-09-05!8m2!3d34.7026289!4d135.4876282!3m6!1s0x6000e6882bad2a2b:0x55c4b0321b6d2c2c!5m1!1s2018-09-05!8m2!3d34.7026289!4d135.4876282
+Redirect 301 /trianglecoffee https://www.google.com/maps/place/cycle%26cafe+TRI%E2%8A%BFNGLE/@34.6652864,135.5031803,17z/data=!3m1!4b1!4m7!3m6!1s0x6000e769f2cc0001:0x6f82eb2eb47a1d5b!5m1!1s2018-09-05!8m2!3d34.665282!4d135.505369
+Redirect 301 /bitcafe https://www.google.com/maps/place/bit+cafe/@34.6725639,135.4882392,17z/data=!3m1!4b1!4m5!3m4!1s0x6000e706f801ca65:0x292f5e7734a675e5!8m2!3d34.6725595!4d135.4904279
+Redirect 301 /barpiller https://akr3724284529.owst.jp/
+Redirect 301 /slices https://www.google.com/maps/place/Slices/@34.6702486,135.4996966,17z/data=!4m12!1m6!3m5!1s0x6000e7117da8bdfd:0x533abfb27a3654ea!2sSlices!8m2!3d34.6702486!4d135.4996966!3m4!1s0x6000e7117da8bdfd:0x533abfb27a3654ea!8m2!3d34.6702486!4d135.4996966
+
+### AUSTRALIA ###
+Redirect 301 /madmexfresh https://maps.google.com/?cid=16817097632784468574
+Redirect 301 /spoondelicafe https://maps.google.com/?cid=16215421654583049591
+Redirect 301 /botanistkitchenbar https://maps.google.com/?cid=15241839459928150635
+Redirect 301 /burgerurge https://maps.google.com/?cid=2860616118732202978
+Redirect 301 /windmillbarbistro https://www.google.com/maps?cid=2096489538377074185
+Redirect 301 /redrooster https://maps.google.com/?cid=2228439985350978366
+Redirect 301 /restaurant1903 https://maps.google.com/?cid=14153512761066731110
+Redirect 301 /francesca https://www.google.com/maps?cid=5863648323843897492
+Redirect 301 /i25 https://www.google.com/maps?cid=2988716596267219517
+Redirect 301 /verucasalt https://www.google.com/maps?cid=6200158436616706418
+Redirect 301 /platform62 https://www.google.com/maps?cid=2630720006879518586
+Redirect 301 /urbanpizza https://www.google.com/maps?cid=8614771237797869310
+Redirect 301 /spawnpoint https://www.google.com/maps?cid=14172924104175105401
+Redirect 301 /lastazione https://www.google.com/maps?cid=16436464688017114399
+Redirect 301 /portstephens https://www.google.com/maps?cid=13856801709615246543
+Redirect 301 /nutrientdepot https://www.google.com/maps/place/Nutrient+Depot/@-43.5435925,172.5855575,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xa2bb98b00d7c5460!8m2!3d-43.5435925!4d172.5877462
+Redirect 301 /stoneandwood https://www.google.com/maps?cid=4756700881736903669
+Redirect 301 /brewcafe https://www.google.com/maps?cid=17520040940307533068
+Redirect 301 /xcargo https://www.google.com/maps?cid=15086944353494145938
+Redirect 301 /newyorkpizza https://www.google.com/maps?cid=6820116868532845054
+Redirect 301 /nomnom https://www.google.com/maps?cid=5756196157542111363
+Redirect 301 /5dogs https://www.google.com/maps?cid=17585868957843709076
+Redirect 301 /stephs https://www.google.com/maps?cid=10958328004535823895
+Redirect 301 /thevalley https://www.google.com/maps/place/The+Valley+Brisbane/@-27.452379,153.0371033,17z/data=!3m1!4b1!4m7!3m6!1s0x0:0x68deadbab2d42a20!5m1!1s2018-10-21!8m2!3d-27.452379!4d153.039292
+Redirect 301 /emporium https://www.google.com/maps?cid=7556668242150042144
+Redirect 301 /lagoons https://www.google.com/maps?cid=1361738532237992560
+Redirect 301 /1770hotel https://www.google.com/maps?cid=17351602911042050062
+Redirect 301 /getaway https://www.google.com/maps?cid=13548256684651632848
+Redirect 301 /agnes https://www.google.com/maps?cid=10922383444989763906
+Redirect 301 /discovery https://www.google.com/maps?cid=991625090930231410
+Redirect 301 /backpackers https://www.google.com/maps/place/Backpackers+@+1770/@-24.2110028,151.9000273,17z/data=!4m15!1m7!3m6!1s0x6be985682a43db75:0x2cbdb421d4ded035!2s22+Grahame+Colyer+Dr,+Agnes+Water+QLD+4677,+Australia!3b1!8m2!3d-24.2110028!4d151.902216!3m6!1s0x6be98542800b7749:0x10b99e75a9754b23!5m1!1s2018-10-01!8m2!3d-24.2110028!4d151.902216
+Redirect 301 /greenturtle https://www.google.com/maps?cid=3423305811550480349
+Redirect 301 /sandcastles https://www.google.com/maps?cid=15936815703314146250
+Redirect 301 /catsmeow https://www.google.com/maps?cid=4923821531054165785
+Redirect 301 /littlepegs https://www.google.com/maps?cid=8605951568177022935
+Redirect 301 /altbrew https://www.google.com/maps?cid=802602911705029338
+Redirect 301 /belpaese https://www.google.com/maps?cid=4741723791049535026
+
+### Venezuela ###
+Redirect 301 /meranto https://www.google.com/maps/place/Caff%C3%A8+Meranto/@10.1812413,-64.6842616,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xe8dda65e1356b925!8m2!3d10.1812413!4d-64.6820729
+Redirect 301 /lasempanadas https://www.google.com/maps/place/Las+Empanadas+De+Sim%C3%B3n/@10.2038044,-64.6302166,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xf79d11985f1a9674!8m2!3d10.2038044!4d-64.6280279
+Redirect 301 /altomar https://www.google.com/maps/place/Hotel+Alto+Mar/@10.5995757,-67.1105305,12z/data=!4m5!3m4!1s0x0:0xff626490bd5c9290!8m2!3d10.5995735!4d-67.040492
+Redirect 301 /posada https://www.google.com/maps/place/Posada+El+Oasis/@10.4885315,-67.6144521,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xbc65fe4eac6f458!8m2!3d10.4885315!4d-67.6122634
+Redirect 301 /fanatic https://www.google.com/maps/place/Fanatic+Sport+Bar/@9.5639874,-69.2057213,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x14af4f4d2c0a76d7!8m2!3d9.5639874!4d-69.2035326
+Redirect 301 /altosdeleste https://www.google.com/maps/place/Panaderia+Altos+del+Este/@7.7724126,-72.2115437,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x354daea2553b11f7!8m2!3d7.7724126!4d-72.209355
+
+### Belize ###
+Redirect 301 /mayalousplace https://maps.google.com/?cid=5786180989248085588
+Redirect 301 /windschief https://www.google.com/maps/place/Windschief+Beach+Bar+And+MiniGolf/@16.8588867,-88.2840407,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x2d88a16f0a8f72e7!8m2!3d16.8588867!4d-88.281852
+Redirect 301 /casasofiarestaurant https://www.google.com/maps/place/Casa+Sofia+Inn+%26+Italian+Restaurant/@17.209844,-88.9437867,17z/data=!3m1!4b1!4m7!3m6!1s0x0:0xd5e2b54351830038!5m1!1s2018-09-30!8m2!3d17.209844!4d-88.941598
+Redirect 301 /casasofiahotel https://www.google.com/maps/place/Casa+Sofia+Inn+%26+Italian+Restaurant/@17.209844,-88.9437867,17z/data=!3m1!4b1!4m7!3m6!1s0x0:0xd5e2b54351830038!5m1!1s2018-09-30!8m2!3d17.209844!4d-88.941598
+
+### Mexico ###
+Redirect 301 /artehelado https://www.google.com/maps/place/Artehelado+Villahermosa/@17.9917209,-92.9492996,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x584cf2d74566357f!8m2!3d17.9917209!4d-92.9471109
+
+### Colombia ###
+Redirect 301 /loncheria https://www.google.com/maps/place/Loncheria+Caldas/@2.4386966,-76.6092204,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x96b6820c6d7b2713!8m2!3d2.4386966!4d-76.6070317
+
+### Phillipines ###
+Redirect 301 /bunk5021 https://www.google.com/maps/place/BUNK+5021+HOSTEL/@14.5634905,121.028055,17z/data=!3m1!4b1!4m7!3m6!1s0x0:0xedd6bc4623c594c7!5m1!1s2018-09-30!8m2!3d14.5634905!4d121.0302437
+
+### Thailand ###
+Redirect 301 /pattayabeergarden https://www.google.com/maps/place/Pattaya+Beer+Garden/@12.928118,100.8721613,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xe09744067e0a009d!8m2!3d12.928118!4d100.87435
+Redirect 301 /cocotte https://www.google.com/maps/place/Cocotte/@13.7374603,100.5679045,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x6292add5db0a3bf0!8m2!3d13.7374603!4d100.5700932
+Redirect 301 /catmosphere https://www.google.com/maps/place/Catmosphere+Cat+Caf%C3%A9/@18.8063742,98.9558218,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x580846582945630c!8m2!3d18.8063742!4d98.9580105
+
+### New Zealand ###
+Redirect 301 /nutrientdepot https://www.google.com/maps?cid=11726133936697136224
+
+### BENIDORM ####
+Redirect 301 /polloexpress https://www.google.com/maps/place/Pollo+Express/@38.5420766,-0.1294169,17z/data=!3m1!4b1!4m5!3m4!1s0xd6204eeb91bc617:0xda1dce125d376323!8m2!3d38.5420724!4d-0.1272282
+Redirect 301 /polloexpressgourmet https://www.google.com/maps/place/Pollo+Expresss+Gourmet/@38.5372334,-0.1447592,17z/data=!3m1!4b1!4m5!3m4!1s0xd6204d1d4eeca3d:0x8afc2d448d5b5e74!8m2!3d38.5372292!4d-0.1425705
+Redirect 301 /autoescuelasactual https://www.google.com/maps/place/Autoescuela+Actual,+S.L./@38.5420782,-0.1272718,17z/data=!4m12!1m6!3m5!1s0xd6204e968184c11:0x9fa6604b4345947d!2sAutoescuela+Actual,+S.L.!8m2!3d38.542009!4d-0.127293!3m4!1s0xd6204e968184c11:0x9fa6604b4345947d!8m2!3d38.542009!4d-0.127293
+Redirect 301 /autoescuelasactual2 https://www.google.com/maps/place/Autoescuela+Actual/@38.5374233,-0.1775899,13z/data=!4m8!1m2!2m1!1sautoescuelas+actual!3m4!1s0xd620367ebf4eca1:0x8d7128d48e796474!8m2!3d38.5783923!4d-0.1300543
+
+### DASH ###
+Redirect 301 /perroscalientes https://discoverdash.com/listing/perros-calientes-cruz-de-la-vega/
+Redirect 301 /subwaymultiplaza https://discoverdash.com/listing/subway-c-c-multiplaza-paraiso/
+Redirect 301 /genesishernandez https://discoverdash.com/listing/genesis-hernandez-fruteria-y-venta-de-hortalizas/
+Redirect 301 /panaderiapasteleria https://discoverdash.com/listing/panaderia-pasteleria-y-delicateses-ares-c-a/
+Redirect 301 /lachipola https://discoverdash.com/listing/la-chipola-comida-criolla/
+Redirect 301 /subwaybellasartes https://discoverdash.com/listing/subway-bellas-artes/
+Redirect 301 /baricostabarista https://discoverdash.com/listing/baricosta-barista/
+Redirect 301 /heladeriaefealtamira https://discoverdash.com/listing/heladeria-efe-altamira/
+Redirect 301 /papajohnlospalos https://discoverdash.com/listing/papa-johns-los-palos-grandes/
+Redirect 301 /subwaymillennium https://discoverdash.com/listing/subway-c-c-millennium/
+Redirect 301 /papajohnlosruices https://discoverdash.com/listing/papa-johns-los-ruices/
+Redirect 301 /subwaylido https://discoverdash.com/listing/subway-c-c-lido/
+Redirect 301 /subwaysanignacio https://discoverdash.com/listing/subway-c-c-san-ignacio/
+Redirect 301 /subwayelrosal https://discoverdash.com/listing/subway-el-rosal/
+Redirect 301 /subwaylossimbolos https://discoverdash.com/listing/subway-los-simbolos/
+Redirect 301 /papajohnelrosal https://discoverdash.com/listing/papa-johns-el-rosal/
+Redirect 301 /papajohnloschaguaramos https://discoverdash.com/listing/papa-johns-los-chaguaramos/
+Redirect 301 /papajohnplazalasamericas https://discoverdash.com/listing/papa-johns-c-c-plaza-las-americas/
+Redirect 301 /salopastel https://discoverdash.com/listing/salo-pastel/
+Redirect 301 /fatfactory https://discoverdash.com/listing/fat-factory/
+Redirect 301 /supergolfeados https://discoverdash.com/listing/super-golfeados/
+Redirect 301 /majaguabar https://discoverdash.com/listing/majagua-bar/
+Redirect 301 /mmqdulce https://discoverdash.com/listing/mmqculce-dulces-y-tortas/
+Redirect 301 /wieners https://discoverdash.com/listing/wieners/
+Redirect 301 /kolash https://discoverdash.com/listing/kolash-cakery/
+Redirect 301 /subwaysanantonio https://discoverdash.com/listing/subway-san-antonio-de-los-altos/
+Redirect 301 /relincho https://discoverdash.com/listing/cerveceria-artesanal-relincho/
+Redirect 301 /papajohnsanantonio https://discoverdash.com/listing/papa-johns-san-antonio-de-los-altos/
+Redirect 301 /dulcesdemaita https://discoverdash.com/listing/dulces-de-maita/
+Redirect 301 /pinchero https://discoverdash.com/listing/inversiones-el-pinchero-c-a/
+Redirect 301 /freka1802 https://discoverdash.com/listing/inversiones-freka-1802-c-a/
+Redirect 301 /pedronavaz https://discoverdash.com/listing/pedro-navaz-distribuidora-de-helados/
+Redirect 301 /mastranto https://discoverdash.com/listing/mastranto-delicias-para-picar/
+Redirect 301 /tentaciones https://discoverdash.com/listing/dulces-tentaciones-y-sabores/
+Redirect 301 /tentacionmm https://discoverdash.com/listing/tentacion-mm/
+Redirect 301 /bartender https://discoverdash.com/listing/bartender-truck-venezuela/
+Redirect 301 /gustavomarady https://discoverdash.com/listing/gustavo-marady-distribuidor-de-helado/
+Redirect 301 /navija https://discoverdash.com/listing/navija-abi-saab-cocina-arabe-en-casa/
+Redirect 301 /subwaylatrinidad https://discoverdash.com/listing/subway-la-trinidad/
+
+###TARIFA###
+Redirect 301 /ecocenterrestaurante https://www.google.com/maps/place/Restaurante+Tarifa+Eco+Center/@36.0142894,-5.607788,17z/data=!3m1!4b1!4m5!3m4!1s0xd0c8ef7979f37b9:0xb14587c9d9c53805!8m2!3d36.0142894!4d-5.6055993
+Redirect 301 /ecocenterbar https://www.google.com/maps/place/Restaurante+Tarifa+Eco+Center/@36.0142894,-5.607788,17z/data=!3m1!4b1!4m5!3m4!1s0xd0c8ef7979f37b9:0xb14587c9d9c53805!8m2!3d36.0142894!4d-5.6055993
+Redirect 301 /ecocenteryoga https://www.google.com/maps/place/Restaurante+Tarifa+Eco+Center/@36.0142894,-5.607788,17z/data=!3m1!4b1!4m5!3m4!1s0xd0c8ef7979f37b9:0xb14587c9d9c53805!8m2!3d36.0142894!4d-5.6055993
+Redirect 301 /ecocentersupermercado https://www.google.com/maps/place/Restaurante+Tarifa+Eco+Center/@36.0142894,-5.607788,17z/data=!3m1!4b1!4m5!3m4!1s0xd0c8ef7979f37b9:0xb14587c9d9c53805!8m2!3d36.0142894!4d-5.6055993
+Redirect 301 /elolivo https://www.google.com/maps/place/Calle+Bail%C3%A9n,+10,+11380+Tarifa,+C%C3%A1diz/@36.0146351,-5.6059989,21z/data=!4m5!3m4!1s0xd0c8ef7a1685cb7:0x7386200856027870!8m2!3d36.014506!4d-5.6061136
+Redirect 301 /elcuartito https://www.google.com/maps/place/El+Cuartito/@36.0114777,-5.6100242,17z/data=!3m1!4b1!4m5!3m4!1s0xd0c8ef995295dcb:0x66e2bb5427dfd617!8m2!3d36.0114734!4d-5.6078355
+Redirect 301 /bambule https://www.google.com/maps/place/Bambule/@36.0147763,-5.6073093,17z/data=!3m1!4b1!4m5!3m4!1s0xd0c8ef7b8914007:0x4a9007c467af7120!8m2!3d36.014772!4d-5.6051206
+Redirect 301 /bambule2 https://www.google.com/maps/place/Bambule/@36.0122831,-5.6056946,17z/data=!3m1!4b1!4m5!3m4!1s0xd0c8e57e314e7b3:0xffd3fb7b00ad5bc!8m2!3d36.0122788!4d-5.6035059
+
+### USA ###
+Redirect 301 /koreanspringbbq https://maps.google.com/?cid=5504473888814044376
+Redirect 301 /trevipasta https://maps.google.com/?cid=3293673652362644505
+Redirect 301 /streetza360 https://maps.google.com/?cid=2442696331062332200
+Redirect 301 /bandung https://maps.google.com/?cid=16496891173457802539
+Redirect 301 /citylounge https://maps.google.com/?cid=2947788841150918014
+
+###QR###
+Redirect 301 /qr/atabalats /qr/atabalats.png
+Redirect 301 /qr/chatelet /qr/chatelet.png
+Redirect 301 /qr/lavermu /qr/lavermu.png
+Redirect 301 /qr/pianopiano /qr/pianopiano.png
+
+###TX###
+Redirect 301 /tx/chatelet https://explorer.bitcoin.com/bch/address/bitcoincash:qz0aerh4urdse4aqfn0mpg9jf33xemj4ay6g22t7cj
+Redirect 301 /tx/atabalats https://explorer.bitcoin.com/bch/address/bitcoincash:ppns3s4dgkg9zdy6ap9sc7htew2zh007kcv28tm9uc
+Redirect 301 /tx/lavermu https://explorer.bitcoin.com/bch/address/bitcoincash:qqz2j2najlnzqxzd7qkpwk2atnvj9c8cgsxf7d53aj
+Redirect 301 /tx/pianopiano https://explorer.bitcoin.com/bch/address/bitcoincash:qq2c49tgxglcjnaykf4vj7g4l49nvmdwacwenltqpk
+
+Redirect 301 /pubkey /publickey.therealbitcoin.club@protonmail.com.asc
+Redirect 301 /moveyourbch https://play.google.com/store/apps/details?id=club.therealbitcoin.bchmap
+Redirect 301 /android https://play.google.com/store/apps/details?id=club.therealbitcoin.bchmap
+Redirect 301 /history-bitcoin-btc-blockstream https://np.reddit.com/r/BitcoinMarkets/comments/6rxw7k/informative_btc_vs_bch_articles/dl8v4lp/?st=jaotbt8m&sh=222ce783
+Redirect 301 /all-your-base-are-belong-to-bitcoin /all-your-base-are-belong-to-bitcoin.pdf
+Redirect 301 /all-your-base /all-your-base-are-belong-to-bitcoin.pdf
+
+Redirect 301 /satoshikodex /satoshiskodex
+Redirect 301 /satoshi /satoshiskodex
+Redirect 301 /satoshis /satoshiskodex
+Redirect 301 /kodex /satoshiskodex
+Redirect 301 /bitcoinkodex /satoshiskodex
+
+Redirect 301 /satoshiphilosophy /satoshiskodex
+Redirect 301 /satoshisphilosophy /satoshiskodex
+Redirect 301 /satoshi /satoshiskodex
+Redirect 301 /satoshisphilosophy /satoshiskodex
+Redirect 301 /barriobitcoin https://youtu.be/ktwEYsdvsZ0
+Redirect 301 /bb /barriobitcoin
