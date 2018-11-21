@@ -423,6 +423,7 @@ Redirect 301 /navija https://discoverdash.com/listing/navija-abi-saab-cocina-ara
 Redirect 301 /subwaylatrinidad https://discoverdash.com/listing/subway-la-trinidad/
 
 ###TARIFA###
+Redirect 301 /ecobakeryglutenfree https://www.google.com/maps/place/Ecobakery+Gluten+Free/@36.0198843,-5.6120597,17z/data=!3m1!4b1!4m5!3m4!1s0xd0c8ef393b520f7:0xbcd8eca808081bfe!8m2!3d36.01988!4d-5.609871
 Redirect 301 /ecocenterrestaurante https://maps.google.com/?cid=12773765219118036997
 Redirect 301 /ecocenterbar https://maps.google.com/?cid=12773765219118036997
 Redirect 301 /ecocenteryoga https://maps.google.com/?cid=12773765219118036997
