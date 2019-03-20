@@ -1,4 +1,4 @@
-[{"p":"trbc", "x":"41.406595", "y":"2.16655","n":"The Real Bitcoin Club #BCH #BTC", "t":"99","c":"3","s":"5.0", "d":"3", "a":"0,1,2,34"}
+{merchants:[{"p":"trbc", "x":"41.406595", "y":"2.16655","n":"The Real Bitcoin Club #BCH #BTC", "t":"99","c":"3","s":"5.0", "d":"3", "a":"0,1,2,34"}
 ,{"p":"lalima", "x":"41.4059946","y":"2.1567663","n":"La Lima - comedor vegano asociacion","t":"0","c":"9","s":"5.0", "d":"0", "a":"3,5,6,13"}
 ,{"p":"pasticceria", "x":"41.4047427","y":"2.1559692","n":"La Pasticceria di Gracia","t":"1","c":"32","s":"4.6", "d":"0", "a":"9,10,12,13"}
 ,{"p":"lavermu", "x":"41.4000891","y":"2.1568007","n":"La Vermu - Bar and Tapas","t":"2","c":"335","s":"4.2", "d":"0", "a":"31,32,33,36"}
@@ -124,4 +124,4 @@
 ,{"p":"ecocenteryoga", "x":"36.0142","y":"-5.6054","n":"Yoga y Meditacion - Eco Center Tarifa","t":"999","c":"226","s":"4.6", "d":"0", "a":"25,26,27,2"}
 ,{"p":"ecocenterbar", "x":"36.0143","y":"-5.6055","n":"Bar y Musica - Eco Center Tarifa","t":"2","c":"226","s":"4.6", "d":"0", "a":"31,32,33,36"}
 ,{"p":"ecocenterrestaurante", "x":"36.0144","y":"-5.6056","n":"Restaurante Ecologico - Eco Center Tarifa","t":"0","c":"226","s":"4.6", "d":"0", "a":"3,15,16,19"}
-,{"p":"elcuartito", "x":"36.0114734","y":"-5.6078355","n":"El Cuartito Tarifa - Tapas Bar","t":"0","c":"13","s":"4.8", "d":"0", "a":"31,32,33,36"}]
+,{"p":"elcuartito", "x":"36.0114734","y":"-5.6078355","n":"El Cuartito Tarifa - Tapas Bar","t":"0","c":"13","s":"4.8", "d":"0", "a":"31,32,33,36"}]}
